@@ -5,9 +5,10 @@ class Solution:
     def MissingNumber(self,array,n):
         # code here
         k=n*(n+1)//2
-        s1=0
-        for i in array:
-            s1+=i
+        s1=sum(array)
+        #0
+        #for i in array:
+        #    s1+=i
         return k-s1
 
 
