@@ -1,11 +1,9 @@
 #User function Template for python3
 
 class Solution:
-    def revCoding(self, n, m):
-        # code here
-        if (n*(n+1))//2==m:
-            return 1
-        return 0
+    def sumOfNaturals(self, n):
+        # code here 
+        return ((n*(n+1))//2)%1000000007
 
 
 #{ 
@@ -15,8 +13,8 @@ class Solution:
 if __name__ == '__main__': 
     t = int (input ())
     for _ in range (t):
-        n,m=map(int,input().split())
+        n = int(input())
         
         ob = Solution()
-        print(ob.revCoding(n,m))
+        print(ob.sumOfNaturals(n))
 # } Driver Code Ends
