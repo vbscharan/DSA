@@ -21,8 +21,7 @@ def KDistance(root,k):
     while len(queue):
         pa=queue.pop(0)
         #print(pa[0])
-        if pa[0]>k:
-            break
+        
         if pa[0]==k:
             ans.append(pa[1].data)
         if pa[1].left:
