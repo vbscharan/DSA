@@ -3,6 +3,7 @@ import heapq
 class Solution:
     def TopK(self, array, k):
         # code here
+        '''
         dic={}
         heap=[]
         for i in array:
@@ -11,7 +12,16 @@ class Solution:
             heapq.heappush(heap,(-1*dic[i],-1*i))
         for i in range(k):
             yield -1*heapq.heappop(heap)[1]
-
+        '''
+        dic={}
+        heap=[]
+        for i in array:
+            dic[i]=dic.get(i,0)+1
+        for i in set(array):
+            heap.append([-1*dic[i],-i])
+        heapq.heapify(heap)
+        for i in range(k):
+            yield -1*heapq.heappop(heap)[1]
 
 
 #{ 
