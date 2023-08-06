@@ -3,23 +3,23 @@ class Solution:
     #Function to detect cycle in an undirected graph.
 	def isCycle(self, V: int, adj: List[List[int]]) -> bool:
 		#Code here
-		
-		def dfs(adj,node,par):
-	        dfs.visited[node]=1
-	        for i in adj[node]:
-	            if dfs.visited.get(i) is None:
-		            if dfs(adj,i,node):
+		def dfs(adj,node,parent):
+		    dfs.visited[node]=1
+		    for neighbor in adj[node]:
+		        if dfs.visited.get(neighbor) is None:
+		            if dfs(adj,neighbor,node):
 		                return True
-                elif par!=i:
+                elif parent!=neighbor:
                     return True
             return False
-		    
-        dfs.visited={}
-        for i in range(len(adj)):
-            if dfs.visited.get(i) is None:
-                if dfs(adj,i,-1):
-                    return True
+		
+		dfs.visited={}
+		for vertex in range(len(adj)):
+		    if dfs.visited.get(vertex) is None:
+		        if dfs(adj,vertex,-1):
+		            return True
         return False
+		    
 #{ 
  # Driver Code Starts
 
