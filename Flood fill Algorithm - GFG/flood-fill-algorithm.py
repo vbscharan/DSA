@@ -6,9 +6,9 @@ class Solution:
 		startColor=image[sr][sc]
 		visited=[[0]*m for _ in range(n)]
         def dfs(sr,sc):
-            if image[sr][sc]==startColor:
-                image[sr][sc]=newColor
-                visited[sr][sc]=1
+            #if image[sr][sc]==startColor:
+            image[sr][sc]=newColor
+            visited[sr][sc]=1
             for i in di:
                 x=sr+i[0];y=sc+i[1]
                 if 0<=x<n and 0<=y<m and image[x][y]==startColor and  not visited[x][y]:
